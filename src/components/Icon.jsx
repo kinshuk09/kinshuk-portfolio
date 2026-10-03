@@ -1,0 +1,48 @@
+import {
+  Layers3,
+  Workflow,
+  Network,
+  Code2,
+  Database,
+  Route,
+  Cable,
+  ScanLine,
+  Fingerprint,
+  Cloud,
+  Radio,
+  Mail,
+  Smartphone,
+  BarChart3,
+  Zap,
+  Server,
+  Braces,
+  Users,
+  Send,
+  GitBranch,
+} from 'lucide-react';
+const icons = {
+  Layers3,
+  Workflow,
+  Network,
+  Code2,
+  Database,
+  Route,
+  Cable,
+  ScanLine,
+  Fingerprint,
+  Cloud,
+  Radio,
+  Mail,
+  Smartphone,
+  BarChart3,
+  Zap,
+  Server,
+  Braces,
+  Users,
+  Send,
+  GitBranch,
+};
+export default function Icon({ name, ...props }) {
+  const Component = icons[name] || Network;
+  return <Component aria-hidden="true" {...props} />;
+}

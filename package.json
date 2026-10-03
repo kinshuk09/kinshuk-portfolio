@@ -1,0 +1,37 @@
+{
+  "name": "kinshuk-goel-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build && node scripts/prerender.mjs && node scripts/verify-build.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run test && npm run build",
+    "test:e2e": "playwright test",
+    "audit": "lighthouse http://127.0.0.1:4173 --chrome-flags=\"--headless\" --output=json --output=html --output-path=./test-results/lighthouse --only-categories=performance,accessibility,best-practices,seo",
+    "format": "prettier --write src scripts tests *.js *.json *.html *.md",
+    "format:check": "prettier --check src scripts tests *.js *.json *.html *.md"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.8",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "@vitejs/plugin-react": "^5.1.0",
+    "lighthouse": "^13.5.0",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.2"
+  }
+}
